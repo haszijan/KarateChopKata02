@@ -11,16 +11,18 @@ public class KarateChop {
 
         while(lowestValue <= highestValue) {
             int middleValue = (lowestValue + highestValue) / 2;
-            if(value == array[middleValue]) {
-                return middleValue + 1;
+            if(array[middleValue] == value) {
+                return middleValue;
             }
             else if(array[middleValue] < value) {
                 lowestValue = middleValue + 1;
             }
-            else {
-                highestValue = middleValue;
+            else if (array[middleValue] > value){
+                highestValue = middleValue - 1;
             }
         }
         return -1;
+
+        /* Wynikiem jest indeks szukanej wartosci */
     }
 }
